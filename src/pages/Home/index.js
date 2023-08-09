@@ -25,9 +25,9 @@ function Home() {
   return (
         <GeneralContainer>
           <img src={Logo} alt='logo'></img>
+          <ContainerItems>
           <H1>Faça seu pedido</H1>
 
-          <ContainerItems>
             <Label>Pedido</Label>
             <Input ref={inputOrder} placeholder='Faça seu pedido' />
 

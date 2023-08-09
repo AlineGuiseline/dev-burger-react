@@ -5,13 +5,13 @@ const GeneralContainer = styled.main `
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: 100vh;
 `
 
 const ContainerItems = styled.section `
     display: flex;
     flex-direction: column;
-    margin-top: 76px;
+    
     height: 100%;
 `
 

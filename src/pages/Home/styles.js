@@ -13,7 +13,7 @@ const GeneralContainer = styled.main `
 `
 
 const ContainerItems = styled.section `
-    margin-top: 76px;
+    margin-top: 40px;
     height: 100%;
 `
 

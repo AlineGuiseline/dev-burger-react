@@ -34,9 +34,9 @@ function Orders() {
   return (
         <GeneralContainer>
           <img src={Package} alt='logo'></img>
+          <ContainerItems>
           <H1>Pedidos</H1>
 
-          <ContainerItems>
           <ul>
             {orders.map((order) => (
               <Order key={order.id}>
@@ -49,9 +49,10 @@ function Orders() {
             ))}
           </ul>
 
-            <Button isGray={true} onClick={goBack}>Voltar</Button>
+            <Button isGray={true} onClick={goBack}>
+              Voltar
+            </Button>
           </ContainerItems>
-
 
         </GeneralContainer>
   );
