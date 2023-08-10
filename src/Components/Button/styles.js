@@ -15,8 +15,6 @@ export const Button = styled.button `
     font-weight: bold;
 
     margin-bottom: 30px;
-    
-
     cursor: pointer;
 
     &:hover {
@@ -28,7 +26,7 @@ export const Button = styled.button `
     }
 
     ${props => props.isGray && `
-     margin-top: 85px;
+     margin-top: 65px;
   `}
 `
 

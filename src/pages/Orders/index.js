@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios';
-import Package from '../../assets/package.svg';
-import Trash from '../../assets/trash.svg';
-import Button from '../../Components/Button';
-import H1 from '../../Components/Title';
-import { GeneralContainer, ContainerItems, Order } from './styles';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Package from "../../assets/package.svg";
+import Trash from "../../assets/trash.svg";
+import Button from "../../Components/Button";
+import H1 from "../../Components/Title";
+import { GeneralContainer, ContainerItems, Order, TextArea } from "./styles";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -13,48 +13,49 @@ function Orders() {
 
   useEffect(() => {
     async function fetchOrders() {
-      const {data: newOrder} = await axios.get('http://localhost:3001/order')
+      const { data: newOrder } = await axios.get("http://localhost:3001/order");
 
-      setOrders(newOrder)
+      setOrders(newOrder);
     }
-    fetchOrders()
-  },[])
+    fetchOrders();
+  }, []);
 
   async function deleteOrder(orderId) {
-    await axios.delete(`http://localhost:3001/order/${orderId}`)
+    await axios.delete(`http://localhost:3001/order/${orderId}`);
 
-    const newOrders = orders.filter((order) => order.id !== orderId)
-    setOrders(newOrders)
+    const newOrders = orders.filter((order) => order.id !== orderId);
+    setOrders(newOrders);
   }
 
   function goBack() {
-    navigate("/")
+    navigate("/");
   }
 
   return (
-        <GeneralContainer>
-          <img src={Package} alt='logo'></img>
-          <ContainerItems>
-          <H1>Pedidos</H1>
+    <GeneralContainer>
+      <img src={Package} alt="logo"></img>
+      <ContainerItems>
+        <H1>Pedidos</H1>
 
-          <ul>
-            {orders.map((order) => (
-              <Order key={order.id}>
+        <ul>
+          {orders.map((order) => (
+            <Order key={order.id}>
+              <TextArea>
                 <p>{order.order}</p>
-                <p>{order.clientName}</p>
-                <button onClick={() => deleteOrder(order.id)}>
-                  <img src={Trash} alt="lixeira"/>
-                </button>
-              </Order>
-            ))}
-          </ul>
+                <h2>{order.clientName}</h2>
+              </TextArea>
+              <button onClick={() => deleteOrder(order.id)}>
+                <img src={Trash} alt="lixeira" />
+              </button>
+            </Order>
+          ))}
+        </ul>
 
-            <Button isGray={true} onClick={goBack}>
-              Voltar
-            </Button>
-          </ContainerItems>
-
-        </GeneralContainer>
+        <Button isGray={true} onClick={goBack}>
+          Voltar
+        </Button>
+      </ContainerItems>
+    </GeneralContainer>
   );
 }
 

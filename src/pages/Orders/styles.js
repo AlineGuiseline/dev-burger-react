@@ -5,7 +5,8 @@ const GeneralContainer = styled.main `
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 `
 
 const ContainerItems = styled.section `
@@ -40,31 +41,40 @@ const Input = styled.input `
 
 const Order = styled.li `
     width: 342px;
-    height: 101px;
-    margin-bottom: 15px;
+    padding: 17px 27px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 
-    border-radius: 14px;
     background: rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    border-radius: 14px;
 
-    padding: 15px 0;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    height: 117px;
-
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-
-    p {
-        color: #FFF;
-    }
+    justify-content: space-between;
 
     button {
+        background: transparent;
         border: none;
-        background: none;
         cursor: pointer;
     }
 `
 
-export {GeneralContainer, ContainerItems, Label, Input, Order}
+const TextArea = styled.div `
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    p {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+    }
+`
+export {GeneralContainer, ContainerItems, Label, Input, Order, TextArea}

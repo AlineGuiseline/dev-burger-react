@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 const GeneralContainer = styled.main `
     background-color: #0A0A10;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 
     img {
         margin-top: 20px;
