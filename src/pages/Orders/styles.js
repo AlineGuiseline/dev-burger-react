@@ -40,7 +40,7 @@ const Input = styled.input `
 `
 
 const Order = styled.li `
-    width: 342px;
+    width: 350px;
     padding: 17px 27px;
     margin-top: 10px;
     margin-bottom: 25px;

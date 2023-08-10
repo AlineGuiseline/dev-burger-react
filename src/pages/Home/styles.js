@@ -29,8 +29,8 @@ const Label = styled.label `
 
 const Input = styled.input `
     display: flex;
-    width: 342px;
-    padding: 19px 139px 18px 15px;
+    width: 350px;
+    padding: 19px 20px;
     align-items: center;
     border: none;
     outline: none;

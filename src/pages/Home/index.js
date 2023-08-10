@@ -11,10 +11,12 @@ function Home() {
   const inputOrder = useRef();
   const inputName = useRef();
 
+  const url = 'https://dev-burger-api.vercel.app/'
+  
   const navigate = useNavigate()
 
   async function addNewOrder() {
-    const {data: newOrder} = await axios.post('http://localhost:3001/order', {
+    const {data: newOrder} = await axios.post(`${url}`, {
       order: inputOrder.current.value,
       clientName: inputName.current.value
     })
@@ -29,7 +31,7 @@ function Home() {
           <H1>Faça seu pedido</H1>
 
             <Label>Pedido</Label>
-            <Input ref={inputOrder} placeholder='Faça seu pedido' />
+            <Input ref={inputOrder} placeholder='1 X-Burger, 1 Batata frita' />
 
             <Label>Nome do cliente</Label>
             <Input ref={inputName} placeholder='Fulano da Silva' />

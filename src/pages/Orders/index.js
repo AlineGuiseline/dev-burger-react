@@ -11,9 +11,11 @@ function Orders() {
   const [orders, setOrders] = useState([]);
   const navigate = useNavigate();
 
+  const url = 'https://dev-burger-api.vercel.app/'
+
   useEffect(() => {
     async function fetchOrders() {
-      const { data: newOrder } = await axios.get("http://localhost:3001/order");
+      const { data: newOrder } = await axios.get(`${url}/order`);
 
       setOrders(newOrder);
     }
@@ -21,7 +23,7 @@ function Orders() {
   }, []);
 
   async function deleteOrder(orderId) {
-    await axios.delete(`http://localhost:3001/order/${orderId}`);
+    await axios.delete(`${url}/order/${orderId}`);
 
     const newOrders = orders.filter((order) => order.id !== orderId);
     setOrders(newOrders);
