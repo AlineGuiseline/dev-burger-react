@@ -11,12 +11,12 @@ function Home() {
   const inputOrder = useRef();
   const inputName = useRef();
 
-  const url = 'https://dev-burger-api.vercel.app/'
-  
+  const url = "https://dev-burger-api.vercel.app"
+
   const navigate = useNavigate()
 
   async function addNewOrder() {
-    const {data: newOrder} = await axios.post(`${url}`, {
+    const {data: newOrder} = await axios.post(`${url}/order`, {
       order: inputOrder.current.value,
       clientName: inputName.current.value
     })

@@ -11,7 +11,7 @@ function Orders() {
   const [orders, setOrders] = useState([]);
   const navigate = useNavigate();
 
-  const url = 'https://dev-burger-api.vercel.app/'
+  const url = "https://dev-burger-api.vercel.app"
 
   useEffect(() => {
     async function fetchOrders() {
